@@ -1,49 +1,33 @@
 #include <iostream>
 #include <thread>
 #include <SFML/Graphics.hpp>
-
-void renderingThread(sf::RenderWindow* window)
-{
-	window->setActive(true);
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
-
-	while (window->isOpen())
-	{
-		window->clear(sf::Color::Black); // Calling clear before drawing anything is mandatory
-		window->draw(shape);
-		window->display(); //takes what was drawn on the last call to display and displays it
-	}
-}
-
+#include "beetle.h"
 
 int main()
 {
-	// create window in main thread
-	sf::RenderWindow window(sf::VideoMode({ 600, 600 }), "SFML works!", sf::Style::Close, sf::State::Windowed);
 
+	Beetle beetle{ "../Assets/Beetle/BeetleDown1.png", "../Assets/Beetle/BeetleDown2.png" };
 
-	// deactivate its OpenGL context
-	window.setActive(false);
-	// Be sure application refresh rate is synchronized with vertical freq of monitor to avoid tearing
-	//window.setVerticalSyncEnabled(true);
+	// creates the window
+	sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "Sapling");
+	while (window.isOpen())
+	{
 
-	window.setFramerateLimit(60); // set the frame limit explicitly
-
-	// launch the rendering thread
-	std::thread thread(&renderingThread, &window);
-
-	while (window.isOpen()) {
-		while (const std::optional event = window.pollEvent()) {
-			if (event->is<sf::Event::Closed>()) {
+		// runs as long as the window is open
+		while (const std::optional event = window.pollEvent())
+		{
+			if (event->is<sf::Event::Closed>())
+			{
 				window.close();
 			}
-			else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
-				if (keyPressed->scancode == sf::Keyboard::Scancode::Escape)
-					window.close();
-			}
 		}
+		// clears the window with black so previous frame drawing is gone
+		window.clear(sf::Color::White);
+
+		// draws
+		//window.draw(beetle.currSprite);
+		
+		// copy from buffer to the window
+		window.display();
 	}
-	thread.join();
-	//std::cin.get();
 }

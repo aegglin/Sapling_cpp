@@ -143,7 +143,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="beetle.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="map_tile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="beetle.h" />
+    <ClInclude Include="direction.h" />
+    <ClInclude Include="map_tile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
