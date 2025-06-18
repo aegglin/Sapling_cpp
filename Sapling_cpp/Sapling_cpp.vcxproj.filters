@@ -24,6 +24,9 @@
     <ClCompile Include="beetle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="game_window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="map_tile.h">
@@ -33,6 +36,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="direction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

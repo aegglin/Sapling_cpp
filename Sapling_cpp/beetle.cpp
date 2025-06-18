@@ -4,12 +4,12 @@ Beetle::Beetle(std::string spritePath1, std::string spritePath2) {
 	try {
 		texture1 = sf::Texture("../Assets/Beetle/BeetleDown1.png");
 		texture2 = sf::Texture("../Assets/Beetle/BeetleDown2.png");
-		currTexture = texture1;
 	}
 	catch (sf::Exception e) {}
 
+	currTexture = texture1;
+
 	currTextureNumber = 1;
-	currSprite = sf::Sprite( currTexture );
 	direction = DOWN;
 }
 
@@ -27,3 +27,4 @@ void Beetle::switchTexture() {
 		currTextureNumber = 1;
 	}
 }
+

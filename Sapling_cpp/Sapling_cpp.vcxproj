@@ -146,10 +146,12 @@
     <ClCompile Include="beetle.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="map_tile.cpp" />
+    <ClCompile Include="game_window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="beetle.h" />
     <ClInclude Include="direction.h" />
+    <ClInclude Include="game_window.h" />
     <ClInclude Include="map_tile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

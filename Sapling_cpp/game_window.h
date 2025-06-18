@@ -1,4 +1,7 @@
 #pragma once
+#include <SFML/Graphics.hpp>
+#include "beetle.h"
+
 class GameWindow {
 public:
 	static constexpr int RAW_PIXEL_TILE_SIZE = 16;
@@ -14,6 +17,11 @@ public:
 	static constexpr int WORLD_WIDTH = TILE_SIZE * NUMBER_WORLD_ROWS;
 	static constexpr int WORLD_HEIGHT = TILE_SIZE * NUMBER_WORLD_COLS;
 
+
 	GameWindow();
 	void run();
+
+private:
+	sf::RenderWindow window;
+	Beetle beetle;
 };

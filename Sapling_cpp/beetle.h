@@ -4,18 +4,21 @@
 
 class Beetle {
 public:
-	Beetle();
-	Beetle(std::string spritePath1, std::string spritePath2);
-	sf::Sprite currSprite;
+	Beetle(const std::string& spritePath1, const std::string& spritePath2);
 
 	void switchTexture();
 	void changeDirection(Direction newDirection);
+
+	void setSprite();
+
+	void draw(sf::Window* window);
+	void update();
+
+	sf::Texture currTexture;
 
 private:
 	Direction direction;
 	sf::Texture texture1;
 	sf::Texture texture2;
 	int currTextureNumber;
-	sf::Texture currTexture;
-
 };
