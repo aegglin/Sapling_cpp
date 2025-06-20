@@ -1,6 +1,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "game_window.h"
+#include "direction.h"
 
 GameWindow::GameWindow() : 
 	window(sf::VideoMode({ SCREEN_WIDTH, SCREEN_HEIGHT }), "Sapling"),

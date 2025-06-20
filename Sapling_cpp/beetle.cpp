@@ -1,6 +1,6 @@
 #include "beetle.h"
 
-Beetle::Beetle(std::string spritePath1, std::string spritePath2) {
+Beetle::Beetle(const std::string& spritePath1, const std::string& spritePath2) {
 	try {
 		texture1 = sf::Texture("../Assets/Beetle/BeetleDown1.png");
 		texture2 = sf::Texture("../Assets/Beetle/BeetleDown2.png");
