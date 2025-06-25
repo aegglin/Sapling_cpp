@@ -20,7 +20,6 @@ void GameWindow::draw() {
 void GameWindow::run() {
 	while (window.isOpen())
 	{
-
 		// runs as long as the window is open
 		while (const std::optional event = window.pollEvent())
 		{

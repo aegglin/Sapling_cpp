@@ -18,9 +18,11 @@ public:
 	sf::Texture texture2;
 
 	sf::Sprite currSprite;
-	int speed, x, y;
+	int speed;
+	float x, y;
 
 
 private:
 	int currTextureNumber;
+	float rotationDegrees;
 };
