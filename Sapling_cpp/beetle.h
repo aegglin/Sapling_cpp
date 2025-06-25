@@ -7,18 +7,20 @@ public:
 	Beetle(const std::string& spritePath1, const std::string& spritePath2);
 
 	void switchTexture();
-	void changeDirection(Direction newDirection);
+	void changeDirection(const Direction newDirection);
 
-	void setSprite();
-
-	void draw(sf::Window* window);
+	void draw(sf::RenderWindow* window);
 	void update();
 
-	sf::Texture currTexture;
-
-private:
 	Direction direction;
+	sf::Texture* currTexture;
 	sf::Texture texture1;
 	sf::Texture texture2;
+
+	sf::Sprite currSprite;
+	int speed, x, y;
+
+
+private:
 	int currTextureNumber;
 };

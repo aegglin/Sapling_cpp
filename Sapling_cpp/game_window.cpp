@@ -9,6 +9,14 @@ GameWindow::GameWindow() :
 
 }
 
+void GameWindow::update() {
+	beetle.update();
+}
+
+void GameWindow::draw() {
+	beetle.draw(&window);
+}
+
 void GameWindow::run() {
 	while (window.isOpen())
 	{
@@ -21,13 +29,12 @@ void GameWindow::run() {
 				window.close();
 			}
 		}
+		
 		// clears the window with black so previous frame drawing is gone
 		window.clear(sf::Color::White);
 
-		// draws
-		sf::Sprite currSprite(beetle.currTexture);
-
-		window.draw(currSprite);
+		update();
+		draw();
 
 		// copy from buffer to the window
 		window.display();

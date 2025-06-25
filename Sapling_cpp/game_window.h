@@ -20,6 +20,8 @@ public:
 
 	GameWindow();
 	void run();
+	void update();
+	void draw();
 
 private:
 	sf::RenderWindow window;
