@@ -16,7 +16,6 @@ GameWindow::GameWindow() :
 		"../Assets/beetle/BeetleLeft2.png"
 	)
 {
-	//window.setFramerateLimit(60);
 }
 
 void GameWindow::update() {
@@ -28,6 +27,7 @@ void GameWindow::draw() {
 }
 
 void GameWindow::run() {
+	//window.setFramerateLimit(60);
 	while (window.isOpen())
 	{
 		// runs as long as the window is open

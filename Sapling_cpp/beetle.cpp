@@ -1,5 +1,6 @@
 #include "beetle.h"
 #include <iostream>
+#include "game_window.h"
 
 Beetle::Beetle(
 			const std::string& upPath1,
@@ -54,26 +55,38 @@ void Beetle::changeDirection(const Direction newDirection) {
 void Beetle::update() {
 	
 	// Only animate/move if a key is pressed
-	if (((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)))
-		|| (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
-		|| (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
-		|| (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)
+		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)
+		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)
+		|| sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) {
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)) {
 				changeDirection(UP);
 				y -= speed;
+				if (y < 0) {
+					y = 0;
+				}
 			}
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)) {
 				changeDirection(DOWN);
 				y += speed;
+				if (y + GameWindow::TILE_SIZE > GameWindow::SCREEN_HEIGHT) {
+					y = GameWindow::SCREEN_HEIGHT - GameWindow::TILE_SIZE;
+				}
 			}
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) {
 				changeDirection(RIGHT);
 				x += speed;
+				if (x + GameWindow::TILE_SIZE > GameWindow::SCREEN_WIDTH) {
+					x = GameWindow::SCREEN_WIDTH - GameWindow::TILE_SIZE;
+				}
 			}
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) {
 				changeDirection(LEFT);
 				x -= speed;
+				if (x < 0) {
+					x = 0;
+				}
 			}
 			currSprite->setPosition({ x, y });
 
@@ -84,10 +97,6 @@ void Beetle::update() {
 				spriteUpdateCount = 0;
 			}
 	}
-
-
-	
-
 }
 
 void Beetle::draw(sf::RenderWindow* window) {
