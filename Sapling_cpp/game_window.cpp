@@ -5,8 +5,18 @@
 
 GameWindow::GameWindow() : 
 	window(sf::VideoMode({ SCREEN_WIDTH, SCREEN_HEIGHT }), "Sapling"),
-	beetle("../Assets/Beetle/BeetleDown1.png", "../Assets/Beetle/BeetleDown2.png") {
-
+	beetle(
+		"../Assets/beetle/BeetleUp1.png",
+		"../Assets/beetle/BeetleUp2.png",
+		"../Assets/beetle/BeetleDown1.png",
+		"../Assets/beetle/BeetleDown2.png",
+		"../Assets/beetle/BeetleRight1.png", 
+		"../Assets/beetle/BeetleRight2.png",
+		"../Assets/beetle/BeetleLeft1.png",
+		"../Assets/beetle/BeetleLeft2.png"
+	)
+{
+	//window.setFramerateLimit(60);
 }
 
 void GameWindow::update() {
