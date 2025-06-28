@@ -3,7 +3,6 @@
 
 int main()
 {
-
 	GameWindow window;
 	window.run();
 }
