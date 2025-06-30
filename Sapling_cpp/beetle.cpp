@@ -15,7 +15,7 @@ Beetle::Beetle(
 			currSpriteNumber(1),
 			spriteUpdateCount(0),
 			direction(DOWN),
-			speed(0.03f),
+			speed(3.00f),
 			x(50.0f), y(50.0f),
 			upTexture1(upPath1),
 			upTexture2(upPath2),
@@ -135,6 +135,6 @@ void Beetle::draw(sf::RenderWindow* window) {
 			}
 			break;
 	}
-
+	currSprite->setPosition({ x, y });
 	window->draw(*currSprite);
 }
