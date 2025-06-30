@@ -26,4 +26,5 @@ public:
 private:
 	sf::RenderWindow window;
 	Beetle beetle;
+	sf::Clock clock;
 };

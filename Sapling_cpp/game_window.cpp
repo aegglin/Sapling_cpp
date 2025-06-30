@@ -27,9 +27,17 @@ void GameWindow::draw() {
 }
 
 void GameWindow::run() {
-	//window.setFramerateLimit(60);
+	window.setFramerateLimit(60);
+
+	sf::Time timeSinceLastUpdate = sf::Time::Zero;
+	sf::Time timePerFrame = sf::seconds(1.0f / 60.0f);
+	sf::Time delta;
+
 	while (window.isOpen())
 	{
+		delta = clock.restart();
+		timeSinceLastUpdate += delta;
+
 		// runs as long as the window is open
 		while (const std::optional event = window.pollEvent())
 		{
@@ -39,11 +47,14 @@ void GameWindow::run() {
 			}
 		}
 		
-		// clears the window with black so previous frame drawing is gone
-		window.clear(sf::Color::White);
+		while (timeSinceLastUpdate > timePerFrame) {
+			timeSinceLastUpdate -= timePerFrame;
+			// clears the window with black so previous frame drawing is gone
+			window.clear(sf::Color::White);
 
-		update();
-		draw();
+			update();
+			draw();
+		}
 
 		// copy from buffer to the window
 		window.display();
