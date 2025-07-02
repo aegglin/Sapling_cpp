@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "beetle.h"
+#include "map_tile_handler.h"
 
 class GameWindow {
 public:
@@ -27,4 +28,5 @@ private:
 	sf::RenderWindow window;
 	Beetle beetle;
 	sf::Clock clock;
+	//MapTileHandler mapTileHandler;
 };
