@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "game_constants.h"
 #include "direction.h"
 
 class Beetle {

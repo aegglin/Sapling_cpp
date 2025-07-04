@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="beetle.h" />
     <ClInclude Include="direction.h" />
+    <ClInclude Include="game_constants.h" />
     <ClInclude Include="game_window.h" />
     <ClInclude Include="map_tile.h" />
     <ClInclude Include="map_tile_handler.h" />

@@ -70,15 +70,15 @@ void Beetle::update() {
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)) {
 				changeDirection(DOWN);
 				y += speed;
-				if (y + GameWindow::TILE_SIZE > GameWindow::SCREEN_HEIGHT) {
-					y = GameWindow::SCREEN_HEIGHT - GameWindow::TILE_SIZE;
+				if (y + GameConstants::TILE_SIZE > GameConstants::SCREEN_HEIGHT) {
+					y = GameConstants::SCREEN_HEIGHT - GameConstants::TILE_SIZE;
 				}
 			}
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) {
 				changeDirection(RIGHT);
 				x += speed;
-				if (x + GameWindow::TILE_SIZE > GameWindow::SCREEN_WIDTH) {
-					x = GameWindow::SCREEN_WIDTH - GameWindow::TILE_SIZE;
+				if (x + GameConstants::TILE_SIZE > GameConstants::SCREEN_WIDTH) {
+					x = GameConstants::SCREEN_WIDTH - GameConstants::TILE_SIZE;
 				}
 			}
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) {

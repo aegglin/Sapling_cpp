@@ -1,10 +1,10 @@
 
 #include <SFML/Graphics.hpp>
-#include "game_window.h"
 #include "direction.h"
+#include "game_window.h"
 
 GameWindow::GameWindow() : 
-	window(sf::VideoMode({ SCREEN_WIDTH, SCREEN_HEIGHT }), "Sapling"),
+	window(sf::VideoMode({ GameConstants::SCREEN_WIDTH, GameConstants::SCREEN_HEIGHT }), "Sapling"),
 	beetle(
 		"../Assets/beetle/BeetleUp1.png",
 		"../Assets/beetle/BeetleUp2.png",
@@ -16,6 +16,7 @@ GameWindow::GameWindow() :
 		"../Assets/beetle/BeetleLeft2.png"
 	)
 {
+	mapTileHandler.loadMap("../Assets/maps/map1.txt");
 }
 
 void GameWindow::update() {

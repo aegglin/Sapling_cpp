@@ -47,5 +47,8 @@
     <ClInclude Include="map_tile_handler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="game_constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
