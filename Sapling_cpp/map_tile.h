@@ -1,9 +1,12 @@
 #pragma once
+#include <SFML/Graphics.hpp>
+
 class MapTile {
 public:
 	bool isSolid;
-	bool hasSound;
-	
-	MapTile();
-	MapTile(bool isSolid, bool hasSound);
+	std::string name;
+	sf::Texture texture;
+	sf::Sprite sprite;
+
+	MapTile(sf::Texture texture, sf::Sprite sprite, const std::string& name, bool isSolid);
 };

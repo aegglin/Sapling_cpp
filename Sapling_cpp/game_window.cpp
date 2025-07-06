@@ -15,9 +15,7 @@ GameWindow::GameWindow() :
 		"../Assets/beetle/BeetleLeft1.png",
 		"../Assets/beetle/BeetleLeft2.png"
 	)
-{
-	mapTileHandler.loadMap("../Assets/maps/map1.txt");
-}
+{}
 
 void GameWindow::update() {
 	beetle.update();
