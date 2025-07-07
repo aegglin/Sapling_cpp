@@ -5,7 +5,7 @@
 #include <SFML/Graphics.hpp>
 
 
-MapTileHandler::MapTileHandler() : currTileNumber(0)
+MapTileHandler::MapTileHandler()
 {
 	loadTileImages();
 	loadMap("../Assets/maps/map1.txt");
@@ -29,8 +29,7 @@ void MapTileHandler::loadTileImages()
 void MapTileHandler::loadTileImage(const std::string& imageFileName, const std::string& name, bool isSolid)
 {
 	MapTile tile(imageFileName, name, isSolid);
-	mapTiles[currTileNumber] = tile;
-	currTileNumber++;
+	mapTiles.emplace_back(tile);
 }
 
 void MapTileHandler::loadMap(const std::string& fileName) {

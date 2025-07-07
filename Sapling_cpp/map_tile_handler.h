@@ -12,8 +12,7 @@ public:
 	void loadTileImages();
 
 private:
-	MapTile mapTiles[11];
+	std::vector<MapTile> mapTiles;
 	void loadTileImage(const std::string& imageFileName, const std::string& name, bool isSolid);
-	int currTileNumber;
 };
 
