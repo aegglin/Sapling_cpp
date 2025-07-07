@@ -28,10 +28,7 @@ void MapTileHandler::loadTileImages()
 
 void MapTileHandler::loadTileImage(const std::string& imageFileName, const std::string& name, bool isSolid)
 {
-	sf::Texture texture(imageFileName);
-	sf::Sprite sprite(texture);
-
-	MapTile tile(texture, sprite, name, isSolid);
+	MapTile tile(imageFileName, name, isSolid);
 	mapTiles[currTileNumber] = tile;
 	currTileNumber++;
 }
