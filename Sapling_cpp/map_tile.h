@@ -10,5 +10,4 @@ public:
 	std::string name;
 
 	MapTile(const std::string& fileName, const std::string& name, bool isSolid);
-	void draw();
 };

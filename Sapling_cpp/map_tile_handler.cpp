@@ -7,23 +7,23 @@
 
 MapTileHandler::MapTileHandler()
 {
-	loadTileImages();
 	loadMap("../Assets/maps/map1.txt");
+	loadTileImages();
 }
 
 void MapTileHandler::loadTileImages()
 {
-	loadTileImage("../Assets/Grass.png", "Grass", false);
-	loadTileImage("../Assets/Tree1.png", "Tree1", true);
-	loadTileImage("../Assets/Tree2.png", "Tree2", true);
-	loadTileImage("../Assets/Tree3.png", "Tree3", true);
-	loadTileImage("../Assets/Shrub.png", "Shrub", true);
-	loadTileImage("../Assets/Underbrush.png", "Underbrush", false);
-	loadTileImage("../Assets/Shrub_Underbrush.png", "ShrubUnderbrush", true);
-	loadTileImage("../Assets/OrangeFlower.png", "OrangeFlower", false);
-	loadTileImage("../Assets/Tree1_Flies1.png", "TreeFlies1", true);
-	loadTileImage("../Assets/Tree1_Beehive1.png", "TreeBeehive1", true);
-	loadTileImage("../AssetsTree1_Woodpecker1.png", "TreeWoodpecker1", true);
+	loadTileImage("../Assets/tiles/Grass.png", "Grass", false);
+	loadTileImage("../Assets/tiles/Tree1.png", "Tree1", true);
+	loadTileImage("../Assets/tiles/Tree2.png", "Tree2", true);
+	loadTileImage("../Assets/tiles/Tree3.png", "Tree3", true);
+	loadTileImage("../Assets/tiles/Shrub.png", "Shrub", true);
+	loadTileImage("../Assets/tiles/Underbrush.png", "Underbrush", false);
+	loadTileImage("../Assets/tiles/Shrub_Underbrush.png", "ShrubUnderbrush", true);
+	loadTileImage("../Assets/tiles/OrangeFlower.png", "OrangeFlower", false);
+	loadTileImage("../Assets/tiles/Tree1_Flies1.png", "TreeFlies1", true);
+	loadTileImage("../Assets/tiles/Tree1_Beehive1.png", "TreeBeehive1", true);
+	loadTileImage("../Assets/tiles/Tree1_Woodpecker1.png", "TreeWoodpecker1", true);
 }
 
 void MapTileHandler::loadTileImage(const std::string& imageFileName, const std::string& name, bool isSolid)
