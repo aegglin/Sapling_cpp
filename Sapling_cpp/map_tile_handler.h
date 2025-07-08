@@ -10,6 +10,7 @@ public:
 	int mapTileNumbers[GameConstants::NUMBER_WORLD_ROWS][GameConstants::NUMBER_WORLD_COLS];
 	void loadMap(const std::string& fileName);
 	void loadTileImages();
+	void drawAll(sf::RenderWindow* window);
 
 private:
 	std::vector<MapTile> mapTiles;

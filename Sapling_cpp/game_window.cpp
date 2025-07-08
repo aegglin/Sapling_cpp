@@ -23,6 +23,7 @@ void GameWindow::update() {
 
 void GameWindow::draw() {
 	beetle.draw(&window);
+	mapTileHandler.drawAll(&window);
 }
 
 void GameWindow::run() {

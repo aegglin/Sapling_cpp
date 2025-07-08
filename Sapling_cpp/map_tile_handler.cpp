@@ -26,6 +26,20 @@ void MapTileHandler::loadTileImages()
 	loadTileImage("../Assets/tiles/Tree1_Woodpecker1.png", "TreeWoodpecker1", true);
 }
 
+void MapTileHandler::drawAll(sf::RenderWindow* window)
+{
+	for (int r = 0; r < GameConstants::NUMBER_WORLD_ROWS; r++)
+	{
+		for (int c = 0; c < GameConstants::NUMBER_WORLD_COLS; c++)
+		{
+			int tileNumber = mapTileNumbers[r][c];
+			MapTile tile = mapTiles[tileNumber];
+			tile.sprite.setPosition({ r * GameConstants::NUMBER_WORLD_COLS, c * GameConstants::NUMBER_WORLD_ROWS });
+			window->draw(tile.sprite);
+		}
+	}
+}
+
 void MapTileHandler::loadTileImage(const std::string& imageFileName, const std::string& name, bool isSolid)
 {
 	MapTile tile(imageFileName, name, isSolid);
