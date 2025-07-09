@@ -34,7 +34,7 @@ void MapTileHandler::drawAll(sf::RenderWindow* window)
 		{
 			int tileNumber = mapTileNumbers[r][c];
 			MapTile tile = mapTiles[tileNumber];
-			tile.sprite.setPosition({ r * GameConstants::NUMBER_WORLD_COLS, c * GameConstants::NUMBER_WORLD_ROWS });
+			tile.sprite.setPosition({ r * GameConstants::NUMBER_WORLD_ROWS, c * GameConstants::NUMBER_WORLD_COLS });
 			window->draw(tile.sprite);
 		}
 	}
