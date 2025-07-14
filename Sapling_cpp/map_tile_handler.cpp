@@ -33,9 +33,9 @@ void MapTileHandler::drawAll(sf::RenderWindow* window)
 		for (int c = 0; c < GameConstants::NUMBER_WORLD_COLS; c++)
 		{
 			int tileNumber = mapTileNumbers[r][c];
-			MapTile tile = mapTiles[tileNumber];
-			tile.sprite.setPosition({ r * GameConstants::NUMBER_WORLD_ROWS, c * GameConstants::NUMBER_WORLD_COLS });
-			window->draw(tile.sprite);
+			MapTile* tile = mapTiles[tileNumber];
+			tile->sprite.setPosition({ r * GameConstants::NUMBER_WORLD_ROWS, c * GameConstants::NUMBER_WORLD_COLS });
+			window->draw(tile->sprite);
 		}
 	}
 }
@@ -43,7 +43,7 @@ void MapTileHandler::drawAll(sf::RenderWindow* window)
 void MapTileHandler::loadTileImage(const std::string& imageFileName, const std::string& name, bool isSolid)
 {
 	MapTile tile(imageFileName, name, isSolid);
-	mapTiles.emplace_back(tile);
+	mapTiles.emplace_back(&tile);
 }
 
 void MapTileHandler::loadMap(const std::string& fileName) {
