@@ -3,6 +3,7 @@
 #include <sstream>
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <SFML/System/Vector2.hpp>
 
 
 MapTileHandler::MapTileHandler()
@@ -34,7 +35,8 @@ void MapTileHandler::drawAll(sf::RenderWindow* window)
 		{
 			int tileNumber = mapTileNumbers[r][c];
 			MapTile* tile = mapTiles[tileNumber];
-			tile->sprite.setPosition({ r * GameConstants::NUMBER_WORLD_ROWS, c * GameConstants::NUMBER_WORLD_COLS });
+			sf::Vector2<float> test(r * GameConstants::NUMBER_WORLD_ROWS, c * GameConstants::NUMBER_WORLD_COLS);
+			tile->sprite.setPosition(test);
 			window->draw(tile->sprite);
 		}
 	}
