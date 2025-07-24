@@ -35,8 +35,8 @@ void MapTileHandler::drawAll(sf::RenderWindow* window)
 		{
 			int tileNumber = mapTileNumbers[r][c];
 			MapTile* tile = mapTiles[tileNumber];
-			sf::Vector2<float> test(r * GameConstants::NUMBER_WORLD_ROWS, c * GameConstants::NUMBER_WORLD_COLS);
-			tile->sprite.setPosition(test);
+			/*sf::Vector2<float> test(r * GameConstants::NUMBER_WORLD_ROWS, c * GameConstants::NUMBER_WORLD_COLS);
+			tile->sprite.setPosition(test);*/
 			window->draw(tile->sprite);
 		}
 	}
