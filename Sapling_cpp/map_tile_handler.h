@@ -13,7 +13,7 @@ public:
 	void drawAll(sf::RenderWindow* window);
 
 private:
-	std::vector<MapTile*> mapTiles;
+	std::vector<MapTile> mapTiles;
 	void loadTileImage(const std::string& imageFileName, const std::string& name, bool isSolid);
 };
 

@@ -22,8 +22,19 @@ void GameWindow::update() {
 }
 
 void GameWindow::draw() {
+	MapTile tile1("../Assets/tiles/Grass.png", "Grass", false);
+	tile1.sprite.setScale({ 0.1f, 0.1f });
+	tile1.sprite.setPosition({ 0, 0 });
+	MapTile tile2("../Assets/tiles/Tree1.png", "Tree1", true);
+	tile2.sprite.setScale({ 0.1f, 0.1f });
+	tile2.sprite.setPosition({ GameConstants::TILE_SIZE, 0 });
+
+	window.draw(tile1.sprite);
+	window.draw(tile2.sprite);
+
 	beetle.draw(&window);
-	mapTileHandler.drawAll(&window);
+
+	//mapTileHandler.drawAll(&window);
 }
 
 void GameWindow::run() {

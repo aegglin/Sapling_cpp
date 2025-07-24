@@ -34,18 +34,19 @@ void MapTileHandler::drawAll(sf::RenderWindow* window)
 		for (int c = 0; c < GameConstants::NUMBER_WORLD_COLS; c++)
 		{
 			int tileNumber = mapTileNumbers[r][c];
-			MapTile* tile = mapTiles[tileNumber];
-			/*sf::Vector2<float> test(r * GameConstants::NUMBER_WORLD_ROWS, c * GameConstants::NUMBER_WORLD_COLS);
-			tile->sprite.setPosition(test);*/
-			window->draw(tile->sprite);
+			MapTile& tile = mapTiles[tileNumber];
+			tile.sprite.setScale({ 0.1f, 0.1f });
+			sf::Vector2<float> position(r * GameConstants::NUMBER_WORLD_ROWS, c * GameConstants::NUMBER_WORLD_COLS);
+			tile.sprite.setPosition(position);
+
+			window->draw(tile.sprite);
 		}
 	}
 }
 
 void MapTileHandler::loadTileImage(const std::string& imageFileName, const std::string& name, bool isSolid)
 {
-	MapTile tile(imageFileName, name, isSolid);
-	mapTiles.emplace_back(&tile);
+	mapTiles.emplace_back(imageFileName, name, isSolid);
 }
 
 void MapTileHandler::loadMap(const std::string& fileName) {
