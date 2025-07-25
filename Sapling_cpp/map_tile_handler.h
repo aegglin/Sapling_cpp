@@ -11,9 +11,9 @@ public:
 	void loadMap(const std::string& fileName);
 	void loadTileImages();
 	void drawAll(sf::RenderWindow* window);
+	std::vector<MapTile> mapTiles;
 
 private:
-	std::vector<MapTile> mapTiles;
 	void loadTileImage(const std::string& imageFileName, const std::string& name, bool isSolid);
 };
 

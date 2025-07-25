@@ -12,4 +12,5 @@ namespace GameConstants {
 	static constexpr int NUMBER_WORLD_COLS = 50;
 	static constexpr int WORLD_WIDTH = TILE_SIZE * NUMBER_WORLD_ROWS;
 	static constexpr int WORLD_HEIGHT = TILE_SIZE * NUMBER_WORLD_COLS;
+	static constexpr int NUMBER_TILES = 11;
 };

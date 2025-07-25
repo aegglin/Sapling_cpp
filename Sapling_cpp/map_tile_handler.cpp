@@ -8,6 +8,7 @@
 
 MapTileHandler::MapTileHandler()
 {
+	mapTiles.reserve(GameConstants::NUMBER_TILES);
 	loadMap("../Assets/maps/map1.txt");
 	loadTileImages();
 }
@@ -34,7 +35,8 @@ void MapTileHandler::drawAll(sf::RenderWindow* window)
 		for (int c = 0; c < GameConstants::NUMBER_WORLD_COLS; c++)
 		{
 			int tileNumber = mapTileNumbers[r][c];
-			MapTile& tile = mapTiles[tileNumber];
+			MapTile tile = mapTiles[tileNumber];
+			
 			tile.sprite.setScale({ 0.1f, 0.1f });
 			sf::Vector2<float> position(r * GameConstants::NUMBER_WORLD_ROWS, c * GameConstants::NUMBER_WORLD_COLS);
 			tile.sprite.setPosition(position);
@@ -46,7 +48,9 @@ void MapTileHandler::drawAll(sf::RenderWindow* window)
 
 void MapTileHandler::loadTileImage(const std::string& imageFileName, const std::string& name, bool isSolid)
 {
-	mapTiles.emplace_back(imageFileName, name, isSolid);
+	MapTile tile(imageFileName, name, isSolid);
+	mapTiles.emplace_back(tile);
+	mapTiles.back().sprite.setTexture(mapTiles.back().texture);
 }
 
 void MapTileHandler::loadMap(const std::string& fileName) {
