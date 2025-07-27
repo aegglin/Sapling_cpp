@@ -15,7 +15,7 @@ Beetle::Beetle(
 			currSpriteNumber(1),
 			spriteUpdateCount(0),
 			direction(DOWN),
-			speed(3.00f),
+			speed(50.00f),
 			x(50.0f), y(50.0f),
 			upTexture1(upPath1),
 			upTexture2(upPath2),

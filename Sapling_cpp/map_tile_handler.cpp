@@ -36,11 +36,8 @@ void MapTileHandler::drawAll(sf::RenderWindow* window)
 		{
 			int tileNumber = mapTileNumbers[r][c];
 			MapTile tile = mapTiles[tileNumber];
-			
-			tile.sprite.setScale({ 0.1f, 0.1f });
 			sf::Vector2<float> position(r * GameConstants::NUMBER_WORLD_ROWS, c * GameConstants::NUMBER_WORLD_COLS);
 			tile.sprite.setPosition(position);
-
 			window->draw(tile.sprite);
 		}
 	}
@@ -49,6 +46,7 @@ void MapTileHandler::drawAll(sf::RenderWindow* window)
 void MapTileHandler::loadTileImage(const std::string& imageFileName, const std::string& name, bool isSolid)
 {
 	MapTile tile(imageFileName, name, isSolid);
+	tile.sprite.setScale({ 0.1f, 0.1f });
 	mapTiles.emplace_back(tile);
 	mapTiles.back().sprite.setTexture(mapTiles.back().texture);
 }
